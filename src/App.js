@@ -6,6 +6,8 @@ import Footer from "./components/Footer";
 import Tasks from "./components/Tasks";
 import AddTask from "./components/AddTask";
 import About from "./components/About";
+import Login from "./components/login";
+import Register from "./components/register";
 
 const App = () => {
   const [showAddTask, setShowAddTask] = useState(false);
@@ -127,8 +129,10 @@ const App = () => {
           showAdd={showAddTask}
         />
         <Routes>
+          <Route path="/" element={<Login />}></Route>
+          <Route path="/register" element={<Register />}></Route>
           <Route
-            path="/"
+            path="/home"
             element={
               <>
                 {showAddTask && <AddTask onAdd={addTask} />}
